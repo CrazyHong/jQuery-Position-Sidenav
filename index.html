@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery左侧滑动可定位网页（支持上下滑动）</title>
+	<link rel="stylesheet" href="css/lanrenzhijia.css" type="text/css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/pagescroller.min.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		var navLabel = new Array('Introduction', 'How It Works', "What's Included?", 'Documentation', 'Download Plugin');
+		
+		$('#main').pageScroller({ navigation: navLabel });
+		
+		$('.next').click(function(e){
+			e.preventDefault();
+			pageScroller.next();
+		});
+			
+		$('.prev').click(function(e){
+			e.preventDefault();
+			pageScroller.prev();
+		});
+		
+		$('.jumpTo').click(function(e){
+			e.preventDefault();
+			pageScroller.goTo(4);
+		});
+					
+	});	
+	</script>
+</head>
+<body>
+<div id="lrzj" class="light">
+		<a href="#" class="prev"><img src="./images/icon_arrow-up_light.png" alt="" width="28" height="31" /></a>
+		<a href="#" class="next"><img src="./images/icon_arrow-down_light.png" alt="" width="28" height="31" /></a>	</div>
+	
+	<div id="wrapper">
+		<div id="main">
+			<div class="section"><h1>Section 1</h1></div>
+			<div class="section"><h1>Section 2 - <a href="http://www.lanrenzhijia.com" class="jumpTo">Jump To 4</a></h1></div>
+			<div class="section"><h1>Section 3</h1></div>
+			<div class="section"><h1>Section 4</h1></div>
+			<div class="section"><h1>Section 5</h1></div>
+		</div><!-- [END] #main -->
+	</div><!-- [END] #wrapper -->
+</body>
+</html>
